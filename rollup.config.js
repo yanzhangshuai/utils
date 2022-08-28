@@ -7,14 +7,18 @@ import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
 
 //  获取src目录下所有的ts文件 过滤的d.ts和test.ts文件
-const entries = glob.sync('src/**/*.ts').filter(file => !file.endsWith('.d.ts') && !file.endsWith('.test.ts'))
+// const entries = glob.sync('src/**/*.ts').filter(file => !file.endsWith('.d.ts') && !file.endsWith('.test.ts'))
+
+const entries = [
+  'src/index.ts'
+]
 
 const plugins = [
   alias({ entries: [{ find: /^node:(.+)$/, replacement: '$1' }] }),
   resolve({ preferBuiltins: true }),
   json(),
   commonjs(),
-  esbuild({ target: 'es2015', minify: false }),
+  esbuild({ target: 'es2015', minify: true }),
 ]
 
 export default [

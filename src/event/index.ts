@@ -8,7 +8,7 @@ interface EventHandlerType {
   once: boolean
 }
 
-export default class EventEmitter {
+export class EventEmitter {
   private static eventId = 100000
 
   private static events: Recordable<EventHandlerType[]> = {}

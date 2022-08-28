@@ -1,11 +1,10 @@
 {
   "name": "@mwjz/utils",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "packageManager": "pnpm@7.0.1",
   "description": "Opinionated collection of common JavaScript / TypeScript utils by mwjz",
-  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "author": "yanzhangshuai<yanzhangshuai@126.com>",
   "license": "MIT",
-  "funding": "https://github.com/sponsors/antfu",
   "homepage": "https://github.com/yanzhangshuai/utils#readme",
   "repository": {
     "type": "git",
@@ -20,14 +19,14 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./dist/*/index.d.ts",
+      "types": "./dist/index.d.ts",
       "require": "./dist/index.cjs",
       "import": "./dist/index.mjs"
     }
   },
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
-  "types": "dist/*/index.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
     "dist",
     "*.d.ts"
@@ -37,14 +36,13 @@
     "dev": "nr build --watch",
     "lint": "eslint . --fix",
     "prepublishOnly": "npm run build",
-    "release": "bumpp --commit --push --tag && npm publish",
+    "release": "pnpm build && npm publish",
     "typecheck": "tsc --noEmit",
     "test": "vitest",
     "report:test": "vitest run --coverage && open-cli ./coverage/index.html"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.26.1",
-    "@antfu/ni": "^0.17.2",
     "@rollup/plugin-alias": "^3.1.9",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-json": "^4.1.0",
@@ -54,7 +52,6 @@
     "@vitest/coverage-c8": "^0.22.1",
     "bumpp": "^8.2.1",
     "esbuild": "^0.15.5",
-    "esbuild-plugin-d.ts": "^1.1.0",
     "eslint": "^8.23.0",
     "esno": "^0.16.3",
     "glob": "^8.0.3",

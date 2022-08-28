@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest'
-import EventEmitter from './index'
+import { EventEmitter } from './index'
 
 it('event-default', () => {
   EventEmitter.on('test_default', (...args) => {
