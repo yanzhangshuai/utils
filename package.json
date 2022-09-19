@@ -1,6 +1,6 @@
 {
   "name": "@mwjz/utils",
-  "version": "0.1.0",
+  "version": "0.1.8",
   "packageManager": "pnpm@7.0.1",
   "description": "Opinionated collection of common JavaScript / TypeScript utils by mwjz",
   "author": "yanzhangshuai<yanzhangshuai@126.com>",
@@ -22,6 +22,12 @@
       "types": "./dist/index.d.ts",
       "require": "./dist/index.cjs",
       "import": "./dist/index.mjs"
+    },
+    "./globals": {
+      "types": "./globals.d.ts"
+    },
+    "./vue": {
+      "types": "./vue.d.ts"
     }
   },
   "main": "dist/index.cjs",
@@ -32,7 +38,7 @@
     "*.d.ts"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "build": "cross-env TS_NODE_PROJECT=./scripts/tsconfig.json ts-node ./scripts/build.ts",
     "dev": "nr build --watch",
     "lint": "eslint . --fix",
     "prepublishOnly": "npm run build",
@@ -42,27 +48,31 @@
     "report:test": "vitest run --coverage && open-cli ./coverage/index.html"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.26.1",
+    "@antfu/eslint-config": "^0.27.0",
     "@rollup/plugin-alias": "^3.1.9",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@types/node": "^18.7.13",
+    "@rollup/plugin-node-resolve": "^14.1.0",
+    "@types/glob": "^8.0.0",
+    "@types/node": "^18.7.18",
+    "@types/rollup": "^0.54.0",
     "@types/throttle-debounce": "^5.0.0",
-    "@vitest/coverage-c8": "^0.22.1",
+    "@vitest/coverage-c8": "^0.23.4",
     "bumpp": "^8.2.1",
-    "esbuild": "^0.15.5",
-    "eslint": "^8.23.0",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.15.8",
+    "eslint": "^8.23.1",
     "esno": "^0.16.3",
     "glob": "^8.0.3",
     "open-cli": "^7.0.1",
     "p-limit": "^4.0.0",
-    "rollup": "^2.78.1",
+    "rollup": "^2.79.0",
     "rollup-plugin-dts": "^4.2.2",
     "rollup-plugin-esbuild": "^4.10.1",
     "throttle-debounce": "^5.0.0",
-    "typescript": "^4.8.2",
-    "vite": "^3.0.9",
-    "vitest": "^0.22.1"
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3",
+    "vite": "^3.1.2",
+    "vitest": "^0.23.4"
   }
 }

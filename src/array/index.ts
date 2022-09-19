@@ -1,5 +1,3 @@
-import type { Arrayable, Nullable } from '../type/global'
-
 /**
  * Convert `Arrayable<T>` to `Array<T>`
  *

@@ -1,6 +1,6 @@
-import { it, expect } from 'vitest';
-import { assert } from './index';
+import { expect, it } from 'vitest'
+import { assert } from './index'
 it('assert', () => {
-  expect(() => assert(false, 'error')).toThrowError('error');
-  expect(assert(true, 'error')).toBeUndefined;
+  expect(() => assert(false, 'error')).toThrowError('error')
+  expect(assert(true, 'error')).toBeUndefined
 })

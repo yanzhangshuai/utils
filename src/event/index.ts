@@ -1,6 +1,5 @@
 import { assert } from '../error/index'
 import { isFunc, isUnDef } from '../is/index'
-import type { Fn, Recordable } from '../type/global'
 
 interface EventHandlerType {
   eventId: number

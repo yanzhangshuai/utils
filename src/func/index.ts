@@ -1,5 +1,4 @@
 import { flattenArrayable } from '../array'
-import type { Fn, Nullable } from '../type/global'
 
 /**
  * Call the function

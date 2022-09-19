@@ -12,7 +12,7 @@ it('event-default', () => {
 })
 
 it('event throw', () => {
-  //@ts-ignore
+  // @ts-ignore
   expect(() => EventEmitter.on('test_throw', 1, 2, 3)).toThrowError()
 })
 
